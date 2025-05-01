@@ -1,7 +1,7 @@
 const express = require("express");
 const authRoutes = require("./routes/authRoutes");
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 const cors = require("cors");
 
 require("dotenv").config();
@@ -20,7 +20,7 @@ const connectDB = require("./config/db");
 connectDB();
 
 app.get("/", (req, res) => {
-  res.send("Home Page1");
+  res.send("Home Page");
 });
 
 app.listen(PORT, () => {
