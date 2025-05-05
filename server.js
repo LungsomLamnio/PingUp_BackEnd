@@ -16,7 +16,8 @@ const server = http.createServer(app);
 // Initialize Socket.IO
 const io = new Server(server, {
   cors: {
-    origin: "https://pingup-frontend-weld.vercel.app", // Ensure only the frontend is allowed
+    // origin: "https://pingup-frontend-weld.vercel.app",
+    origin: "http://localhost:5173",
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -45,7 +46,8 @@ connectDB();
 // Middleware
 app.use(
   cors({
-    origin: "https://pingup-frontend-weld.vercel.app",
+    // origin: "https://pingup-frontend-weld.vercel.app",
+    origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
