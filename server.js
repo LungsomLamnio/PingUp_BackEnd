@@ -14,13 +14,13 @@ const app = express();
 const server = http.createServer(app);
 
 // Initialize Socket.IO
-const io = new Server(server, {
+const io = require("socket.io")(server, {
   cors: {
-    // origin: "https://pingup-frontend-weld.vercel.app",
     origin: "http://localhost:5173",
     methods: ["GET", "POST"],
     credentials: true,
   },
+  transports: ["websocket", "polling"], // keep both for fallback
 });
 
 // Socket.IO connection handling
